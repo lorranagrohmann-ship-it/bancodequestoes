@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meu Banco de Questões</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Meu Banco de Questões</h1>
+  <nav>
+    <button id="btn-home" class="nav-btn active">Home</button>
+    <button id="btn-cadastro" class="nav-btn">Cadastrar Questões</button>
+    <button id="btn-quiz" class="nav-btn">Revisar Quiz</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="page active">
+    <h2>Bem-vindo ao Meu Banco de Questões</h2>
+    <p>Este projeto é um sistema simples para estudantes de medicina organizarem e revisarem suas questões de estudo.</p>
+    <ul>
+      <li>Cadastrar questões por disciplina e tema</li>
+      <li>Revisar questões em formato de quiz</li>
+      <li>Marcar como revisadas ou favoritas</li>
+      <li>Exportar questões e compartilhar seus estudos</li>
+    </ul>
+  </section>
+
+  <section id="cadastro" class="page">
+    <h2>Cadastrar Nova Questão</h2>
+    <form id="question-form">
+      <label>Disciplina:<br />
+        <input type="text" id="disciplina" required placeholder="Ex: Anatomia" />
+      </label><br/>
+      <label>Tema:<br />
+        <input type="text" id="tema" required placeholder="Ex: Sistema Nervoso" />
+      </label><br/>
+      <label>Enunciado:<br />
+        <textarea id="enunciado" required placeholder="Digite a questão..."></textarea>
+      </label><br/>
+      <label>Opções:<br />
+        <input type="text" class="opcao" placeholder="Opção A" required /><br/>
+        <input type="text" class="opcao" placeholder="Opção B" required /><br/>
+        <input type="text" class="opcao" placeholder="Opção C" /><br/>
+        <input type="text" class="opcao" placeholder="Opção D" /><br/>
+        <input type="text" class="opcao" placeholder="Opção E" />
+      </label><br/>
+      <label>Resposta correta (letra):<br />
+        <input type="text" id="resposta" maxlength="1" pattern="[A-Ea-e]" required placeholder="A, B, C, D ou E" />
+      </label><br/>
+      <button type="submit">Salvar Questão</button>
+    </form>
+  </section>
+
+  <section id="quiz" class="page">
+    <h2>Revisar Questões em Quiz</h2>
+    <div id="quiz-container"></div>
+    <button id="btn-next" style="display:none;">Próxima</button>
+    <button id="btn-marcar-fav" style="display:none;">Marcar Favorita</button>
+    <button id="btn-marcar-rev" style="display:none;">Marcar Revisada</button>
+  </section>
+</main>
+
+<footer>
+  <button id="export-btn">Exportar Questões (JSON)</button>
+  <button id="share-btn">Gerar link para compartilhar</button>
+  <p id="share-link" style="word-break: break-all;"></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
